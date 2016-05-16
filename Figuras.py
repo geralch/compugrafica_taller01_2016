@@ -1,4 +1,5 @@
 # Geraldine Caicedo Hidalgo - 1527691
+# Sebastian Salazar - 0938596
 # Computacion Grafica
 # Practica 01 - Mayo 2016
 # Figuras - Cubo | Esfera
@@ -27,6 +28,13 @@ XEsfera = -0.5
 YEsfera = -0.5
 ZEsfera = -0.5
 
+XScaCuadro = -1
+YScaCuadro = -1
+ZScaCuadro = -1
+XScaEsfera = -1
+YScaEsfera = -1
+ZScaEsfera = -1
+
 colorRE = 1
 colorGE = 1
 colorBE = 1
@@ -48,13 +56,16 @@ def InitGL(Width, Height):
 
 def mostrarEscena():
     global XCuadro,YCuadro,ZCuadro,XEsfera,YEsfera,ZEsfera
+    global  XScaCuadro, YScaCuadro, ZScaCuadro, XScaEsfera, YScaEsfera, ZScaEsfera
     global colorRE, colorGE, colorBE
     global DIRECTION
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
     # Cubo
     glLoadIdentity()
-    glTranslatef(0,0,-9)
+    xc = -0.3/2
+    yc = -0.3/2
+    glTranslatef(xc,yc,-6)
     glRotatef(XCuadro,0.5,0.0,0.0)
     glRotatef(YCuadro,0.0,0.5,0.0)
     glRotatef(ZCuadro,0.0,0.0,0.5)
@@ -113,56 +124,51 @@ def mostrarEscena():
     glColor3f(0, 0, 1) # 
     glEnd()
 
-    #XCuadro = XCuadro + 0.30
-    #YCuadro = YCuadro - 0.30
-
     # Esfera
 
     glLoadIdentity()
-    glTranslatef(0,0,0)
+    xe = -0.4/2
+    ye = -0.4/2
+    glTranslatef(xe,ye,-2)
     glRotatef(XEsfera,0.5,0.0,0.0)
     glRotatef(YEsfera,0.0,0.5,0.0)
     glRotatef(ZEsfera,0.0,0.0,0.5)
+    glScalef(XScaEsfera,YScaEsfera,ZScaEsfera)
     glBegin(GL_TRIANGLES)
     glColor3f(1, 1, 1)
-    #XEsfera = XEsfera + 0.30
-    #ZEsfera = ZEsfera - 0.30
+    XEsfera = XEsfera + 0.30
+    ZEsfera = ZEsfera - 0.30
     glEnd()
     glutWireSphere(0.4,32,32);
 
     glutSwapBuffers()
 
 def keyPressed(key,x,y):
-	global colorR
-	global colorG
-	global colorB
+	global XCuadro,YCuadro,ZCuadro
+	global XScaEsfera, YScaEsfera, ZScaEsfera
+	
 	if(key[0]==114):
-		colorR = 1
-		colorG = 0
-		colorB = 0
+		XCuadro = XCuadro + 0.30
+		YCuadro = YCuadro - 0.30
 	if(key[0]==115):
-		colorR = 0
-		colorG = 1
-		colorB = 0
+		XScaEsfera = 0.8
+		YScaEsfera = 0.8
+		ZScaEsfera = 0.8
 	if(key[0]==122):
-		colorR = 0
-		colorG = 0
-		colorB = 1
+		XScaEsfera = 1.2
+		YScaEsfera = 1.2
+		ZScaEsfera = 1.2
 
 	glLoadIdentity()
 
 def click(button,state,x,y):
-    global XCuadro,YCuadro,ZCuadro
-
-    if (button==GLUT_LEFT_BUTTON and state==GLUT_UP):
-        print("click")
-        print(x)
-        print(y)
-        XCuadro = XCuadro + 0.30
-        ZCuadro = ZCuadro - 0.30
-
-    if (button==GLUT_RIGHT_BUTTON and state==GLUT_UP):
-        print("click izq")
+	global colorRE, colorGE, colorBE
+	global XCuadro,YCuadro,ZCuadro
+	if (button==GLUT_LEFT_BUTTON and state==GLUT_UP):
+		XCuadro = XCuadro + 0.30
+		ZCuadro = ZCuadro - 0.30
+	if (button==GLUT_RIGHT_BUTTON and state==GLUT_UP):
+		print("click izq")
 
 
 def main():
