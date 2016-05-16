@@ -1,7 +1,7 @@
 # Taller 01 | Computacion Grafica
 * AUTORES : geralch - segus3088
 * ARCHIVOS : Figuras.py - Imagen.py - Modelos.py
-Semestre 01 de 2016
+* Semestre 01 de 2016
 
 1. FIGURAS A GENERAR 
   En el misma ventana genere las siguiente figuras
