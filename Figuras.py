@@ -135,7 +135,7 @@ def mostrarEscena():
     glRotatef(ZEsfera,0.0,0.0,0.5)
     glScalef(XScaEsfera,YScaEsfera,ZScaEsfera)
     glBegin(GL_TRIANGLES)
-    glColor3f(1, 1, 1)
+    glColor3f(1, 1, .7)
     XEsfera = XEsfera + 0.30
     ZEsfera = ZEsfera - 0.30
     glEnd()
