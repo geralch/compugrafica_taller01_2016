@@ -118,10 +118,11 @@ def DrawGLScene():
 	glLoadIdentity()					# Reset The View
 	glTranslatef(0.0,0.0,-6.0)			# Move Into The Screen
 
+	"""
 	glRotatef(xrot,1.0,0.0,0.0)			# Rotate The Cube On It's X Axis
 	glRotatef(yrot,0.0,1.0,0.0)			# Rotate The Cube On It's Y Axis
 	glRotatef(zrot,0.0,0.0,1.0)			# Rotate The Cube On It's Z Axis
-    
+    """
     # Note there does not seem to be support for this call.
 	#glBindTexture(GL_TEXTURE_2D,texture)	# Rotate The Pyramid On It's Y Axis
 
@@ -133,6 +134,7 @@ def DrawGLScene():
 	glTexCoord2f(1.0, 1.0); glVertex3f( 1.0,  1.0,  1.0)	# Top Right Of The Texture and Quad
 	glTexCoord2f(0.0, 1.0); glVertex3f(-1.0,  1.0,  1.0)	# Top Left Of The Texture and Quad
 	
+	"""
 	# Back Face
 	glTexCoord2f(1.0, 0.0); glVertex3f(-1.0, -1.0, -1.0)	# Bottom Right Of The Texture and Quad
 	glTexCoord2f(1.0, 1.0); glVertex3f(-1.0,  1.0, -1.0)	# Top Right Of The Texture and Quad
@@ -162,7 +164,7 @@ def DrawGLScene():
 	glTexCoord2f(1.0, 0.0); glVertex3f(-1.0, -1.0,  1.0)	# Bottom Right Of The Texture and Quad
 	glTexCoord2f(1.0, 1.0); glVertex3f(-1.0,  1.0,  1.0)	# Top Right Of The Texture and Quad
 	glTexCoord2f(0.0, 1.0); glVertex3f(-1.0,  1.0, -1.0)	# Top Left Of The Texture and Quad
-	
+	"""
 	glEnd();				# Done Drawing The Cube
     
 	xrot  = xrot + 0.2                # X rotation

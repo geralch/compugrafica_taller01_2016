@@ -72,11 +72,12 @@ def mostrarEscena():
 
 	# Abajo
     glBegin(GL_QUADS)
+    glColor3f(0, 0.4, 0) # Azul
     glVertex3f(caraA[0], caraA[1],  caraA[2])
     glVertex3f(caraA[3], caraA[4],  caraA[5])
     glVertex3f(caraA[6], caraA[7],  caraA[8])
     glVertex3f(caraA[9], caraA[10], caraA[11])
-    glColor3f(0, 0, 0) # Azul
+    
     glEnd()
 
 	# Frente
@@ -139,6 +140,8 @@ def mostrarEscena():
     XEsfera = XEsfera + 0.30
     ZEsfera = ZEsfera - 0.30
     glEnd()
+    glColor3f(0, 0.6, 1)
+    #glTranslatef(0,0,-20)
     glutWireSphere(0.4,32,32);
 
     glutSwapBuffers()
