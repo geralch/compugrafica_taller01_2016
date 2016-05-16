@@ -144,11 +144,6 @@ def main():
 	global window
 	glutInit(sys.argv)
 
-	# Select type of Display mode:   
-	#  Double buffer 
-	#  RGBA color
-	# Alpha components supported 
-	# Depth buffer
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH)
 	
 	# get a 640 x 480 window 
