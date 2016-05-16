@@ -1,47 +1,8 @@
-	#!
 
-# This is statement is required by the build system to query build info
 if __name__ == '__build__':
 	raise Exception
 
 import string
-__version__ = string.split('$Revision: 1.1.1.1 $')[1]
-__date__ = string.join(string.split('$Date: 2007/02/15 19:25:21 $')[1:3], ' ')
-__author__ = 'Tarn Weisner Burton <twburton@users.sourceforge.net>'
-
-#
-# Ported to PyOpenGL 2.0 by Tarn Weisner Burton 10May2001
-#
-# This code was created by Richard Campbell '99 (ported to Python/PyOpenGL by John Ferguson 2000)
-#
-# The port was based on the lesson5 tutorial module by Tony Colston (tonetheman@hotmail.com).  
-#
-# If you've found this code useful, please let me know (email John Ferguson at hakuin@voicenet.com).
-#
-# See original source and C based tutorial at http:#nehe.gamedev.net
-#
-# Note:
-# -----
-# Now, I assume you've read the prior tutorial notes and know the deal here.  The one major, new requirement
-# is to have a working version of PIL (Python Image Library) on your machine.
-#
-# General Users:
-# --------------
-# I think to use textures at all you need Nunmeric Python, I tried without it and BAM Python didn't "like" the texture API.
-#
-# Win32 Users:
-# ------------
-# Well, here's the install I used to get it working:
-# [1] py152.exe - include the TCL install!
-# [2] PyOpenGL.EXE - probably the latest, the Vaults notes should give you a clue.
-# [3] Distutils-0.9.win32.exe for step #4
-# [4] Numerical-15.3.tgz - run the setup.py (need VC++ on your machine, otherwise, have fun with #3, it looks fixable to use gCC).
-#
-# Win98 users (yes Win98, I have Mandrake on the other partition okay?), you need to the Tcl bin directory in your PATH, not PYTHONPATH,
-# just the DOS PATH.
-#
-# BTW, since this is Python make sure you use tabs or spaces to indent, I had numerous problems since I 
-# was using editors that were not sensitive to Python.
 #
 from OpenGL.GL import *
 from OpenGL.GLUT import *
@@ -49,7 +10,6 @@ from OpenGL.GLU import *
 import sys
 from Image import *
 
-# Some api in the chain is translating the keystrokes to this octal string
 # so instead of saying: ESCAPE = 27, we use the following.
 ESCAPE = '\033'
 
@@ -63,7 +23,7 @@ texture = 0
 
 def LoadTextures():
     #global texture
-    image = open("image1.bmp")
+    image = open("image1.bmp")#aca se coloca la ruta relativa de la imagen a cargar
 	
     ix = image.size[0]
     iy = image.size[1]
