@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Integrantes
-Geraldine Caicedo 
+Geraldine Caicedo 1527691
 Sebastian Salazar 0938596
 """
 import pygame
@@ -63,7 +63,7 @@ class Cube(object):
         self.cube.render_texture(self.rubik_id,((0,0),(1,0),(1,1),(0,1)))
         #glmDraw(self.modelo, GLM_SMOOTH)
         #glLoadIdentity()
-        
+        glTranslatef(-9,2,0)
         self.modelo.render_scene()
             
     def move_forward(self):
