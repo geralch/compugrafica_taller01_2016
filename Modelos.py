@@ -24,11 +24,11 @@ class Cube(object):
         self.surface_id = graphics.load_texture("ConcreteTriangles.png")
         #---Coordinates----[x,y,z]-----------------------------
         self.coordinates = [0,0,0]
-        self.ground = graphics.ObjLoader("plane.txt")
-        self.pyramid = graphics.ObjLoader("scene.txt")
+        self.ground = graphics.ObjLoader("plane.obj")
+        self.pyramid = graphics.ObjLoader("scene.obj")
         self.cube = graphics.ObjLoader("cube.obj")
 
-        self.modelo = glmReadOB("monkey.txt")
+        self.modelo = ObjLoader("monkey.obj")
         #self.monito = graphics.ObjLoader("monkey.txt")
 
     def render_scene(self):
@@ -116,7 +116,7 @@ class Cube(object):
 def main():
     pygame.init()
     pygame.display.set_mode((640,480),pygame.DOUBLEBUF|pygame.OPENGL)
-    pygame.display.set_caption("PyOpenGL Tutorial")
+    pygame.display.set_caption("Para Grafica los modelos")
     clock = pygame.time.Clock()
     done = False
     
