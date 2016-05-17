@@ -7,7 +7,7 @@ Sebastian Salazar 0938596
 import pygame
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import pymc
+#import pymc
 #import glm
 import math
 import graphics
@@ -56,7 +56,7 @@ class Cube(object):
         
         self.ground.render_texture(self.surface_id,((0,0),(2,0),(2,2),(0,2)))
         self.pyramid.render_scene()
-        
+        self.modelo.render_scene()
         glTranslatef(-7.5,2,0)
         glRotatef(self.cube_angle,0,1,0)
         glRotatef(45,1,0,0)
@@ -64,7 +64,7 @@ class Cube(object):
         #glmDraw(self.modelo, GLM_SMOOTH)
         #glLoadIdentity()
         glTranslatef(-9,2,0)
-        self.modelo.render_scene()
+        
             
     def move_forward(self):
         self.coordinates[2] += 0.1 * math.cos(math.radians(self.angle))
