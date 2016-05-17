@@ -28,7 +28,7 @@ class Cube(object):
         self.pyramid = graphics.ObjLoader("scene.obj")
         self.cube = graphics.ObjLoader("cube.obj")
 
-        self.modelo = ObjLoader("monkey.obj")
+        self.modelo = graphics.ObjLoader("monkey.obj")
         #self.monito = graphics.ObjLoader("monkey.txt")
 
     def render_scene(self):
@@ -57,9 +57,9 @@ class Cube(object):
         glRotatef(self.cube_angle,0,1,0)
         glRotatef(45,1,0,0)
         self.cube.render_texture(self.rubik_id,((0,0),(1,0),(1,1),(0,1)))
-        glmDraw(self.modelo, GLM_SMOOTH)
+        #glmDraw(self.modelo, GLM_SMOOTH)
         
-        #self.monito.render_scene()
+        self.modelo.render_scene()
             
     def move_forward(self):
         self.coordinates[2] += 0.1 * math.cos(math.radians(self.angle))
