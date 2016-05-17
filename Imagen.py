@@ -1,4 +1,8 @@
-
+"""
+Integrantes
+Geraldine Caicedo 1527691
+Sebastian Salazar 0938596
+"""
 if __name__ == '__build__':
 	raise Exception
 

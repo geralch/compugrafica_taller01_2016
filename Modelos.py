@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-
+"""
+Integrantes
+Geraldine Caicedo 
+Sebastian Salazar 0938596
+"""
 import pygame
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -58,7 +62,7 @@ class Cube(object):
         glRotatef(45,1,0,0)
         self.cube.render_texture(self.rubik_id,((0,0),(1,0),(1,1),(0,1)))
         #glmDraw(self.modelo, GLM_SMOOTH)
-        glLoadIdentity()
+        #glLoadIdentity()
         
         self.modelo.render_scene()
             
